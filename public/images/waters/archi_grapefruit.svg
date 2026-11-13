@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgArchi" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="canBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#be185d"/>
+      <stop offset="35%" stop-color="#f43f5e"/>
+      <stop offset="70%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="silverTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgArchi)"/>
+  <!-- Aluminum Can 330ml / 250ml -->
+  <g transform="translate(140, 50)">
+    <!-- Top rim -->
+    <ellipse cx="60" cy="25" rx="55" ry="14" fill="url(#silverTop)" stroke="#cbd5e1" stroke-width="2"/>
+    <ellipse cx="60" cy="24" rx="46" ry="10" fill="#64748b"/>
+    <rect x="52" y="16" width="16" height="10" rx="3" fill="#cbd5e1"/>
+    <!-- Can Body -->
+    <path d="M5,25 L5,260 Q5,280 60,280 Q115,280 115,260 L115,25 Z" fill="url(#canBody)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <!-- Grapefruit illustration -->
+    <circle cx="60" cy="180" r="32" fill="#fb7185" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="60" cy="180" r="26" fill="#f43f5e"/>
+    <polygon points="60,180 50,158 70,158" fill="#fda4af"/>
+    <polygon points="60,180 38,170 48,190" fill="#fda4af"/>
+    <polygon points="60,180 72,190 82,170" fill="#fda4af"/>
+    <!-- Text -->
+    <text x="60" y="85" text-anchor="middle" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="3">ARÇI</text>
+    <text x="60" y="108" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="11" fill="#fef08a" letter-spacing="2">GREÝPFRUT</text>
+    <text x="60" y="125" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="9" fill="#ffffff" letter-spacing="1">PREMIUM SPARKLING</text>
+    <rect x="42" y="235" width="36" height="16" rx="8" fill="#ffffff"/>
+    <text x="60" y="246" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="9" fill="#be185d">330 ml</text>
+    <!-- Shine -->
+    <rect x="18" y="28" width="10" height="235" rx="5" fill="#ffffff" opacity="0.3"/>
+  </g>
+</svg>

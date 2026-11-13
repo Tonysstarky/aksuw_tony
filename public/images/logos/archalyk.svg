@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="arcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052cc"/>
+      <stop offset="100%" stop-color="#071b63"/>
+    </linearGradient>
+    <linearGradient id="arcSnow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8d5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#arcBg)"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <!-- Mountain peaks (Pöwrize) -->
+  <polygon points="100,45 145,125 55,125" fill="#1b4ab5"/>
+  <polygon points="100,45 118,78 100,74 82,78" fill="url(#arcSnow)"/>
+  <polygon points="65,70 102,125 28,125" fill="#2563eb" opacity="0.9"/>
+  <polygon points="65,70 78,92 65,88 52,92" fill="url(#arcSnow)"/>
+  <polygon points="135,70 172,125 98,125" fill="#1d4ed8" opacity="0.9"/>
+  <polygon points="135,70 148,92 135,88 122,92" fill="url(#arcSnow)"/>
+  <!-- Water drop -->
+  <path d="M100,92 C90,110 88,120 88,126 C88,133 93,138 100,138 C107,138 112,133 112,126 C112,120 110,110 100,92 Z" fill="#60a5fa"/>
+  <ellipse cx="96" cy="122" rx="2" ry="4" fill="#ffffff" opacity="0.8"/>
+  <!-- Text -->
+  <text x="100" y="162" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="20" fill="#ffffff" letter-spacing="2">ARÇALYK</text>
+  <text x="100" y="178" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="9" fill="#93c5fd" letter-spacing="3">PÖWRIZE • SUW</text>
+</svg>

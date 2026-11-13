@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <!-- Background mesh & glows -->
+    <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#2563eb" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#1e1b4b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="50%" stop-color="rgba(14,165,233,0.2)"/>
+      <stop offset="100%" stop-color="rgba(3,105,161,0.4)"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#7dd3fc"/>
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="mountGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0c2378"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Deep ambient glow -->
+  <circle cx="250" cy="250" r="230" fill="url(#hGlow)"/>
+
+  <!-- Outer Glass Ring with Dashes -->
+  <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="6,6"/>
+  <circle cx="250" cy="250" r="186" fill="url(#shieldGrad)" stroke="rgba(255,255,255,0.5)" stroke-width="2.5"/>
+
+  <!-- Golden Stars at top -->
+  <g fill="url(#goldGrad)" transform="translate(250, 102)">
+    <polygon points="0,-9 2.5,-3 8.5,-3 3.5,1 5.5,7 0,3 -5.5,7 -3.5,1 -8.5,-3 -2.5,-3" />
+    <polygon points="-30,-5 -28,0 -23,0 -27,3 -25,8 -30,5 -35,8 -33,3 -37,0 -32,0" transform="scale(0.8)"/>
+    <polygon points="30,-5 32,0 37,0 33,3 35,8 30,5 25,8 27,3 23,0 28,0" transform="scale(0.8)"/>
+  </g>
+
+  <!-- Circular path for curved text -->
+  <path id="textArcTop" d="M 95,250 A 155,155 0 0,1 405,250" fill="none"/>
+  <text font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-weight="900" font-size="19" fill="#ffffff" letter-spacing="4">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      AK SUW ZAWODY
+    </textPath>
+  </text>
+
+  <!-- Central Mountain Peaks (Köpetdag) -->
+  <g transform="translate(0, 40)">
+    <polygon points="250,150 320,270 180,270" fill="url(#mountGrad)" opacity="0.95"/>
+    <polygon points="250,150 270,195 250,190 230,195" fill="#ffffff" opacity="0.95"/>
+    
+    <polygon points="190,185 245,270 135,270" fill="#1e40af" opacity="0.85"/>
+    <polygon points="190,185 204,215 190,210 176,215" fill="#e0f2fe" opacity="0.9"/>
+
+    <polygon points="310,185 365,270 255,270" fill="#1d4ed8" opacity="0.85"/>
+    <polygon points="310,185 324,215 310,210 296,215" fill="#e0f2fe" opacity="0.9"/>
+  </g>
+
+  <!-- Giant 3D Water Crystal Drop in Foreground -->
+  <g filter="url(#softGlow)">
+    <path d="M 250,165 
+             C 215,225 185,265 185,295 
+             C 185,335 214,360 250,360 
+             C 286,360 315,335 315,295 
+             C 315,265 285,225 250,165 Z" 
+          fill="url(#dropGrad)" 
+          stroke="rgba(255,255,255,0.85)" 
+          stroke-width="3"/>
+    
+    <!-- Inner reflection on droplet -->
+    <ellipse cx="230" cy="275" rx="14" ry="32" fill="#ffffff" opacity="0.75" transform="rotate(-28 230 275)"/>
+    <circle cx="270" cy="325" r="7" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- Water Ripple Rings around base -->
+  <ellipse cx="250" cy="365" rx="100" ry="16" fill="none" stroke="rgba(186,230,253,0.7)" stroke-width="2.5"/>
+  <ellipse cx="250" cy="378" rx="135" ry="18" fill="none" stroke="rgba(125,211,252,0.4)" stroke-width="1.5"/>
+
+  <!-- Lower Curved Banner: CREATED BY YUSUP GAJAÝEW -->
+  <path id="textArcBottom" d="M 95,250 A 155,155 0 0,0 405,250" fill="none"/>
+  <text font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-weight="800" font-size="14.5" fill="#fde047" letter-spacing="2.5">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      ★ YUSUP GAJAÝEW • 2026 ★
+    </textPath>
+  </text>
+</svg>

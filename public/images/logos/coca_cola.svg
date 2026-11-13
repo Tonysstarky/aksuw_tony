@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="cocaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#cocaBg)"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+  
+  <!-- Classic dynamic wave -->
+  <path d="M25,120 Q65,85 100,105 T175,90" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Coca-Cola script-style lettering -->
+  <text x="100" y="85" text-anchor="middle" font-family="'Brush Script MT', 'Arial', cursive, sans-serif" font-weight="bold" font-style="italic" font-size="34" fill="#ffffff">Coca-Cola</text>
+  
+  <!-- Tagline: BOTTLERS & BONAQUA -->
+  <rect x="35" y="142" width="130" height="24" rx="12" fill="#ffffff"/>
+  <text x="100" y="158" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="9" fill="#dc2626" letter-spacing="1.5">BONAQUA & COLA</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgCC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cocaLiquid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b1103"/>
+      <stop offset="35%" stop-color="#581c87"/>
+      <stop offset="70%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#1e0500"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgCC)"/>
+  <g transform="translate(155, 30)">
+    <!-- Red Cap -->
+    <rect x="34" y="10" width="26" height="20" rx="3" fill="#dc2626" stroke="#fca5a5" stroke-width="1.5"/>
+    <rect x="31" y="30" width="32" height="6" rx="2" fill="#dc2626"/>
+    <!-- Iconic Contour Bottle -->
+    <path d="M35,36 Q35,60 22,85 Q12,110 24,130 Q12,170 12,250 Q12,280 25,295 Q38,300 47,300 Q56,300 69,295 Q82,280 82,250 Q82,170 70,130 Q82,110 72,85 Q59,60 59,36 Z" fill="url(#cocaLiquid)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <!-- Red Ribbon Label -->
+    <rect x="12" y="150" width="70" height="75" rx="6" fill="#dc2626" stroke="#ffffff" stroke-width="1"/>
+    <path d="M14,195 Q35,182 50,192 T80,180" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="47" y="178" text-anchor="middle" font-family="'Brush Script MT', 'Arial', cursive, sans-serif" font-weight="bold" font-style="italic" font-size="16" fill="#ffffff">Coca-Cola</text>
+    <text x="47" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="7" fill="#ffffff" letter-spacing="0.5">ORIGINAL TASTE</text>
+    <rect x="32" y="214" width="28" height="9" rx="4.5" fill="#ffffff"/>
+    <text x="46" y="221" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="7" fill="#dc2626">0.5 L</text>
+    <!-- Glass Contour Highlights -->
+    <path d="M22,90 Q16,130 18,240" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

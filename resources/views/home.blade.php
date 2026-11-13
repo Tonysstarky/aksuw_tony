@@ -31,23 +31,27 @@
             </div>
         </div>
 
-        <!-- Reference Glassmorphism Artwork -->
+        <!-- Reference Glassmorphism Artwork with Custom Photo / Logo -->
         <div class="hero-art-wrapper">
             <div class="hero-art-pedestal"></div>
             <div class="glassmorphism-card">
                 <div class="gc-top">
-                    <span>MULTI-RESOLUTION</span>
-                    <span>CREATED BY YUSUP GAJAÝEW</span>
-                    <span>INFINITE BLENDS</span>
+                    <span>AK SUW</span>
+                    <span>YUSUP GAJAÝEW</span>
+                    <span>2026</span>
                 </div>
-                <div class="gc-center">
-                    <div class="gc-sub-title">GLASS</div>
-                    <div class="gc-main-title">MORPHISM</div>
-                    <div class="gc-tagline">AK SUW ZAWODY • ASHGABAT</div>
+
+                {{-- 📸 FOTOGRAF ÝA-DA LOGO: Eger öz suratyňyzy goýmak isleseňiz, aşakdaky src="..." ýerine suratyň adyny ýa-da linkini ýazyň --}}
+                <div class="gc-media-container">
+                    <img src="{{ asset('images/logos/hero_brand_logo.svg') }}" 
+                         alt="Ak Suw Zawody - Yusup Gajaýew" 
+                         class="hero-media-img" 
+                         id="heroArtImage">
                 </div>
+
                 <div class="gc-bottom">
-                    <span>WATER ARTWORK</span>
-                    <span class="gc-pill">MODERN GRADIENT MESH</span>
+                    <span>AŞGABAT</span>
+                    <span class="gc-pill">SUW KÄRHANASY</span>
                     <span>PHP 8.5 • L13</span>
                 </div>
             </div>
@@ -73,12 +77,12 @@
 </div>
 
 <div class="factories-grid">
-    {{-- 1. ARÇALYK KÄRHANASY --}}
+    {{-- 1. ARÇALYK KÄRHANASY (Resmi: https://tm.archalyk.com/) --}}
     @php $archalykLink = auth()->check() ? route('waters.index', ['category' => 1]) : route('login'); @endphp
     <a href="{{ $archalykLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Aşakdaky src ýerine islendik logo linkini ýa-da faýlyny goýup bilersiňiz --}}
+            <img src="{{ asset('images/logos/archalyk.svg') }}" 
                  alt="Arçalyk Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Arçalyk</div>
@@ -86,12 +90,12 @@
         <span class="factory-chip">Aşgabat</span>
     </a>
 
-    {{-- 2. GOŞA ÇYNAR KÄRHANASY --}}
+    {{-- 2. GOŞA ÇYNAR KÄRHANASY (Resmi: https://100haryt.com/tk/ag/brands/gosa-cynar-246/products) --}}
     @php $gosaLink = auth()->check() ? route('waters.index', ['category' => 2]) : route('login'); @endphp
     <a href="{{ $gosaLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1559839914-1b34645a3803?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Aşakdaky src ýerine islendik logo linkini ýa-da faýlyny goýup bilersiňiz --}}
+            <img src="{{ asset('images/logos/gosa_cynar.svg') }}" 
                  alt="Goşa Çynar Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Goşa Çynar</div>
@@ -99,25 +103,25 @@
         <span class="factory-chip">Büzmeýin</span>
     </a>
 
-    {{-- 3. TEŞNE KÄRHANASY --}}
+    {{-- 3. TEŞNE KÄRHANASY (Siziň oklan suratyňyz: «Iýeniňi siňdirýär») --}}
     @php $teshneLink = auth()->check() ? route('waters.index', ['category' => 3]) : route('login'); @endphp
     <a href="{{ $teshneLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Siziň oklan resmi Teşne logosy --}}
+            <img src="{{ asset('images/logos/tesne.svg') }}" 
                  alt="Teşne Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Teşne</div>
-        <div class="factory-sub">Çeşme & Altyn Ýunus</div>
-        <span class="factory-chip">Mary</span>
+        <div class="factory-sub">Nar, Limon & Miweli</div>
+        <span class="factory-chip">Iýeniňi siňdirýär</span>
     </a>
 
-    {{-- 4. COCA-COLA BOTTLERS --}}
+    {{-- 4. COCA-COLA BOTTLERS (Bonaqua & Cola) --}}
     @php $cocaLink = auth()->check() ? route('waters.index', ['category' => 4]) : route('login'); @endphp
     <a href="{{ $cocaLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Aşakdaky src ýerine islendik logo linkini ýa-da faýlyny goýup bilersiňiz --}}
+            <img src="{{ asset('images/logos/coca_cola.svg') }}" 
                  alt="Coca-Cola Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Coca-Cola</div>
@@ -125,25 +129,25 @@
         <span class="factory-chip">Bottlers</span>
     </a>
 
-    {{-- 5. LIPTON DRINKS --}}
+    {{-- 5. LIPTON ICE TEA (Lipton çaýlary we salkyn içgileri) --}}
     @php $liptonLink = auth()->check() ? route('waters.index', ['category' => 5]) : route('login'); @endphp
     <a href="{{ $liptonLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Aşakdaky src ýerine islendik logo linkini ýa-da faýlyny goýup bilersiňiz --}}
+            <img src="{{ asset('images/logos/lipton.svg') }}" 
                  alt="Lipton Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Lipton</div>
         <div class="factory-sub">Ice Tea & Çaýlar</div>
-        <span class="factory-chip">Teas</span>
+        <span class="factory-chip">Ice Tea</span>
     </a>
 
-    {{-- 6. RED BULL ENERGY --}}
+    {{-- 6. RED BULL ENERGY (Resmi: https://www.redbull.com/ie-en/energydrink) --}}
     @php $redbullLink = auth()->check() ? route('waters.index', ['category' => 6]) : route('login'); @endphp
     <a href="{{ $redbullLink }}" class="factory-card">
         <div class="factory-logo-wrapper">
-            {{-- LOGO SURATY: Aşakdaky src="url" ýerine islendik logo linkini goýup bilersiňiz --}}
-            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=200&auto=format&fit=crop&q=80" 
+            {{-- LOGO SURATY: Aşakdaky src ýerine islendik logo linkini ýa-da faýlyny goýup bilersiňiz --}}
+            <img src="{{ asset('images/logos/red_bull.svg') }}" 
                  alt="Red Bull Logo" class="factory-logo-img" data-fallback loading="lazy">
         </div>
         <div class="factory-name">Red Bull</div>

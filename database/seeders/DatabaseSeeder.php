@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
 
         // 3. Exact Waters & Drinks listed in user's text with high-resolution imagery:
 
-        // ==================== SECTION 1: ARÇALYK KÄRHANASY ====================
+        // ==================== SECTION 1: ARÇALYK KÄRHANASY (https://tm.archalyk.com/) ====================
         Water::create([
             'category_id' => $catArchalyk->id,
             'name' => 'Arçalyk Gazlandyrylmadyk Tebigy Agyz Suwy 1.5L',
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 850,
             'ph_level' => '7.4 pH',
             'mineral_content' => 'Pöwrize ýerasty süýji suw çeşmesi, Ca: 48 mg/L, Mg: 18 mg/L, TDS: 220 mg/L',
-            'image' => 'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archalyk_still.svg',
             'description' => '„Arçalyk” kärhanasynyň Pöwrize ýerasty süýji suw ýatagyndan alynýan tebigy agyz suwy. Gündelik içmäge iň peýdaly we ýakymly suw.',
         ]);
 
@@ -126,7 +126,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 900,
             'ph_level' => '7.4 pH',
             'mineral_content' => 'Pöwrize çeşme suwy, amatly göwrüm',
-            'image' => 'https://images.unsplash.com/photo-1595994195534-d5219f02f99f?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archalyk_still.svg',
             'description' => 'Gündelik ýoluňyzda, sportda we iş ýeriňizde ýanyňyzda götermäge amatly 0.5 litrlik Arçalyk tebigy agyz suwy.',
         ]);
 
@@ -138,7 +138,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 600,
             'ph_level' => '7.1 pH',
             'mineral_content' => 'Tebigy mineral gazy, Pöwrize arassa suwy',
-            'image' => 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/powrize_05.svg',
             'description' => 'Pöwrize — gazlandyrylan adaty agyz suwy. Aşgazan-içege we iýmit siňdiriş saglygy üçin tebigy gazly dury agyz suwy.',
         ]);
 
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 450,
             'ph_level' => '6.5 pH',
             'mineral_content' => 'Tebigy greýpfrut şiresi, premium mineral suw',
-            'image' => 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archi_grapefruit.svg',
             'description' => '«Arçi» naýbaşy premium derejeli gazlandyrylan suw seriýasy (0.25L gapda). Greýpfrut tagamly ter we serginlediji lezzet.',
         ]);
 
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 420,
             'ph_level' => '6.4 pH',
             'mineral_content' => 'Laým, narpyz we aloe ekstraktlary',
-            'image' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archi_grapefruit.svg',
             'description' => 'Ýörite tagamly Arçi Mohito & Aloe naýbaşy gazlandyrylan premium suw. Tomus günlerinde teşneligi dessine gandyryjy.',
         ]);
 
@@ -174,7 +174,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 600,
             'ph_level' => '5.8 pH',
             'mineral_content' => 'Pöwrize arassa suwy, tebigy armyt we pyrtykal şerbedi',
-            'image' => 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archalyk_still.svg',
             'description' => 'Arçalyk kärhanasynyň nusgawy Armyt (Дюшес) we Pyrtykal miweli gazlandyrylan limonady. Pöwrize arassa suwundan taýýarlanylýar.',
         ]);
 
@@ -186,11 +186,11 @@ class DatabaseSeeder extends Seeder
             'stock' => 500,
             'ph_level' => '5.9 pH',
             'mineral_content' => 'Estragon (tarhun) we zirk tagamly salkyn içgi',
-            'image' => 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/archalyk_still.svg',
             'description' => 'Arçalyk fabriginiň meşhur Tarhun, Zirk, Buratino we Tokaý miweleri tagamly süýji gazlandyrylan limonadlary.',
         ]);
 
-        // ==================== SECTION 2: GOŞA ÇYNAR ====================
+        // ==================== SECTION 2: GOŞA ÇYNAR (https://100haryt.com/) ====================
         Water::create([
             'category_id' => $catGosaCynar->id,
             'name' => 'Goşa Çynar Emeli Minerallaşdyrylan Suw 1.5L',
@@ -199,7 +199,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 750,
             'ph_level' => '7.2 pH',
             'mineral_content' => 'ISO 9001 sertifikatly, minerallaşdyrylan agyz suwy',
-            'image' => 'https://images.unsplash.com/photo-1550572017-ed200f5e6343?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/gosa_cynar_water.svg',
             'description' => '«Goşa Çynar» kärhanasynyň emeli minerallaşdyrylan gazlandyrylan we gazsyz arassa agyz suwy.',
         ]);
 
@@ -211,7 +211,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 680,
             'ph_level' => '3.0 pH',
             'mineral_content' => 'Klassiki kola tagamy, arassa çeşme suwy',
-            'image' => 'https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/cynar_cola.svg',
             'description' => 'Goşa Çynar kärhanasynyň öndürýän milli Kola Çynar içgisi. Saçak bezegi we myhmançylyk üçin ajaýyp tagam.',
         ]);
 
@@ -223,7 +223,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 450,
             'ph_level' => '3.4 pH',
             'mineral_content' => 'Kafein, B toparyň witaminleri, zirk (barbaris) tagamy',
-            'image' => 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/7_cynar_orange.svg',
             'description' => 'Goşa Çynar kafeinli energiýa içgisi we zirk tagamly witaminleşdirilen salkynlaşdyryjy içgi.',
         ]);
 
@@ -235,45 +235,57 @@ class DatabaseSeeder extends Seeder
             'stock' => 550,
             'ph_level' => '5.6 pH',
             'mineral_content' => '«7 Çynar» seriýasy, tebigy miwe tagamlary',
-            'image' => 'https://images.unsplash.com/photo-1595994195534-d5219f02f99f?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/7_cynar_orange.svg',
             'description' => '«7 Çynar» seriýasyndan Tarhun, Limonad we Pyrtykal (apelsin) tagamly miweli süýji gazlandyrylan limonadlar.',
         ]);
 
-        // ==================== SECTION 3: TEŞNE & JADYLY ÇEŞME ====================
+        // ==================== SECTION 3: TEŞNE (IÝENIŇI SIŇDIRÝÄR) ====================
         Water::create([
             'category_id' => $catTesne->id,
-            'name' => 'Teşne Şetdaly & Limon Tagamly Suw 0.5L',
-            'volume' => '0.5L',
+            'name' => 'Teşne Nar 250ml (Iýeniňi Siňdirýär)',
+            'volume' => '0.25L',
+            'price' => 3.00,
+            'stock' => 950,
+            'ph_level' => '6.8 pH',
+            'mineral_content' => 'Tebigy ter nar (pomegranate) ekstraktly gazlandyrylan suw',
+            'image' => '/images/tesne_products.png',
+            'description' => 'Teşne Nar 250ml: Nahardan soň iýeniňi siňdirýän, ter nar tagamly ýakymly gazlandyrylan agyz suwy.',
+        ]);
+
+        Water::create([
+            'category_id' => $catTesne->id,
+            'name' => 'Teşne Limon 250ml (Iýeniňi Siňdirýär)',
+            'volume' => '0.25L',
             'price' => 3.00,
             'stock' => 880,
-            'ph_level' => '7.2 pH',
-            'mineral_content' => 'Tebigy çeşme suwy, şetdaly we limon ekstraktlary',
-            'image' => 'https://images.unsplash.com/photo-1560023907-5f339617ea30?w=800&auto=format&fit=crop&q=80',
-            'description' => '«Jadyly çeşme» hojalyk jemgyýetiniň (Ak bugdaý etrabynyň Änew şäheri) öndürýän Teşne şetdaly we limon tagamly suwy.',
+            'ph_level' => '6.5 pH',
+            'mineral_content' => 'Tebigy ter limon şiresi we çeşme suwy',
+            'image' => '/images/tesne_products.png',
+            'description' => 'Teşne Limon 250ml: Ter limon tagamly, teşneligi derrew gandyrýan we iýmit siňdirişi gowulandyrýan agyz suwy.',
         ]);
 
         Water::create([
             'category_id' => $catTesne->id,
-            'name' => 'Teşne Alma, Garpyz & Ýertudana 0.5L',
-            'volume' => '0.5L',
+            'name' => 'Teşne Garbyz & Şetdaly 250ml',
+            'volume' => '0.25L',
             'price' => 3.00,
-            'stock' => 800,
-            'ph_level' => '7.3 pH',
-            'mineral_content' => 'Tebigy alma, garpyz we klubnika tagamlary',
-            'image' => 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&auto=format&fit=crop&q=80',
-            'description' => 'Teşne ýeňil gazlandyrylan miwe tagamly suwlary: Alma, garpyz we ýertudana. Tomusda teşneligi gandyrmak üçin amatly.',
+            'stock' => 820,
+            'ph_level' => '6.9 pH',
+            'mineral_content' => 'Süýji ter garbyz we ýakymly şetdaly ekstraktlary',
+            'image' => '/images/tesne_products.png',
+            'description' => 'Teşne Garbyz we Şetdaly 250ml: Salkynlaşdyryjy, miwe tagamly ter suwlar toplumy.',
         ]);
 
         Water::create([
             'category_id' => $catTesne->id,
-            'name' => 'Kewser, Tut & Red Tut Salkyn Içgisi 0.5L',
-            'volume' => '0.5L',
-            'price' => 4.00,
-            'stock' => 520,
-            'ph_level' => '6.2 pH',
-            'mineral_content' => '«Jadyly çeşme» HJ nyşanlary: Kewser, Tut, Red Tut, Belle',
-            'image' => 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=800&auto=format&fit=crop&q=80',
-            'description' => '«Jadyly çeşme» HJ-niň Kewser, Gurt, Belle, Tut we Red Tut haryt nyşanly salkynlaşdyryjy içgileri.',
+            'name' => 'Teşne Alma 250ml',
+            'volume' => '0.25L',
+            'price' => 3.00,
+            'stock' => 760,
+            'ph_level' => '6.7 pH',
+            'mineral_content' => 'Ýaşyl alma tebigy tagamy we witaminler',
+            'image' => '/images/tesne_products.png',
+            'description' => 'Teşne Alma 250ml: Ýaşyl alma tagamly, buz ýaly salkynlaşdyryjy içgi.',
         ]);
 
         $coolerWater = Water::create([
@@ -284,7 +296,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 350,
             'ph_level' => '7.4 pH',
             'mineral_content' => '19 litrlik gaplarda sargyt esnasynda arassa agyz suwuny eltip bermek hyzmaty',
-            'image' => 'https://images.unsplash.com/photo-1559839914-ba2ac6d7c997?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/tesne_cooler_19l.svg',
             'description' => 'Öýlere we ofislere 19 litrlik gaplarda sargyt esnasynda arassa agyz suwuny gapyňyza çenli eltip bermek hyzmaty.',
         ]);
 
@@ -297,7 +309,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 650,
             'ph_level' => '2.5 pH',
             'mineral_content' => 'The Coca-Cola Company nusgawy formulasy',
-            'image' => 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/coca_cola_original.svg',
             'description' => 'Kompaniýanyň iň esasy we bütindünýä belli nusgawy gazly içgisi. Saçak bezegi we toý-baýramlar üçin hemişe birinji saýlaw.',
         ]);
 
@@ -309,7 +321,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 480,
             'ph_level' => '2.8 pH',
             'mineral_content' => 'Şeker goşulmadyk, 0 kaloriýa, berhiz saklaýanlar üçin',
-            'image' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/coca_cola_original.svg',
             'description' => 'Şeker goşulmadyk Coca-Cola Zero Sugar / Light. Hakyky kola tagamy, nol kaloriýa.',
         ]);
 
@@ -321,7 +333,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 520,
             'ph_level' => '3.2 pH',
             'mineral_content' => 'Fanta tebigy apelsin / Sprite serginlediji dury limon-laým',
-            'image' => 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/coca_cola_original.svg',
             'description' => 'Fanta mäşrep/pyrtykal tagamly meşhur gazly içgi we Sprite serginlediji dury gazly içgi.',
         ]);
 
@@ -333,7 +345,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 580,
             'ph_level' => '7.2 pH',
             'mineral_content' => '"The Coca-Cola Company" tarapyndan gaplanýan agyz suwy markasy',
-            'image' => 'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/bonaqua_still.svg',
             'description' => 'Bonaqua — "The Coca-Cola Company" tarapyndan öndürilýän we gaplanýan arassa agyz suwy markasy.',
         ]);
 
@@ -345,7 +357,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 400,
             'ph_level' => '3.5 pH',
             'mineral_content' => 'Cappy miwe şiresi, Schweppes tonik, FuseTea sowuk çaý',
-            'image' => 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/coca_cola_original.svg',
             'description' => 'Cappy tebigy miwe şiresi, Schweppes gazly mineral tonik suwy we FuseTea sowuk çaý (Ice Tea).',
         ]);
 
@@ -358,7 +370,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 480,
             'ph_level' => '3.4 pH',
             'mineral_content' => 'Tebigy ýaşyl çaý ekstrakty, ter limon we sitrus miweleri',
-            'image' => 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/lipton_lemon.svg',
             'description' => '🟢 Ýaşyl çaýlar (Green Tea): Lipton Green Lemon, Green Peach, Green Strawberry we Green Tea Citrus.',
         ]);
 
@@ -370,7 +382,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 550,
             'ph_level' => '3.5 pH',
             'mineral_content' => 'Gara çaý ekstrakty we tebigy şetdaly şiresi',
-            'image' => 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/lipton_lemon.svg',
             'description' => '🟤 Gara çaýlar (Black Tea): Lipton Peach — iň meşhurlarynyň biri. Şetdaly tagamly ter gara çaý lezzeti.',
         ]);
 
@@ -382,7 +394,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 410,
             'ph_level' => '3.5 pH',
             'mineral_content' => 'Malina (raspberry), mango ekzotik we gyzyl tokaý miweleri',
-            'image' => 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/lipton_lemon.svg',
             'description' => '🔴 Tropiki we Garasuw görnüşleri: Lipton Raspberry, Mango Exotic, Red Fruits/Berries we Watermelon & Melon.',
         ]);
 
@@ -394,11 +406,11 @@ class DatabaseSeeder extends Seeder
             'stock' => 350,
             'ph_level' => '3.4 pH',
             'mineral_content' => '⚪ Şekersiz görnüşler (Zero Sugar / Light)',
-            'image' => 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/lipton_lemon.svg',
             'description' => '⚪ Şekersiz görnüşler: Lipton Zero Sugar Lemon, Zero Sugar Peach we Zero Sugar Tropical.',
         ]);
 
-        // ==================== SECTION 6: RED BULL ENERGETIKI IÇGILERI ====================
+        // ==================== SECTION 6: RED BULL ENERGETIKI IÇGILERI (https://www.redbull.com/) ====================
         Water::create([
             'category_id' => $catRedBull->id,
             'name' => 'Red Bull Energy Drink (Original) 250ml',
@@ -407,7 +419,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 550,
             'ph_level' => '3.3 pH',
             'mineral_content' => 'Taurin, kafein, B toparyň witaminleri (B3, B5, B6, B12)',
-            'image' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/redbull_original.svg',
             'description' => 'Red Bull Energy Drink: Adaty we iň köp ýaýran original görnüşi (gök we kümüş reňkli çelekde).',
         ]);
 
@@ -419,7 +431,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 380,
             'ph_level' => '3.4 pH',
             'mineral_content' => 'Şekersiz we kaloriýasyz Red Bull formulasy',
-            'image' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/redbull_original.svg',
             'description' => 'Red Bull Sugarfree (şekersiz, kaloriýasyz) we Red Bull Zero (şekersiz we uglewodsyz görnüşi).',
         ]);
 
@@ -431,7 +443,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 320,
             'ph_level' => '3.3 pH',
             'mineral_content' => 'Tebigy ter garbyz (Watermelon) tagamly energetik',
-            'image' => 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/redbull_original.svg',
             'description' => 'Red Bull Editions: The Red Edition — Garbyz (Watermelon) tagamly ýörite gyzyl seriýa.',
         ]);
 
@@ -443,7 +455,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 310,
             'ph_level' => '3.3 pH',
             'mineral_content' => 'Blueberry (gök nyr) we tropiki miweler tagamy',
-            'image' => 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&auto=format&fit=crop&q=80',
+            'image' => '/images/waters/redbull_original.svg',
             'description' => 'The Blue Edition (Gök nyr / Blueberry) we The Yellow Edition (Tropiki miweler tagamy / Tropical).',
         ]);
 

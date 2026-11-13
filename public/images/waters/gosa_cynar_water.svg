@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgGC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gcBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#a7f3d0" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="gcLabel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgGC)"/>
+  <g transform="translate(145, 25)">
+    <!-- Cap -->
+    <rect x="38" y="10" width="34" height="24" rx="4" fill="#047857" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="35" y="34" width="40" height="6" rx="2" fill="#047857"/>
+    <!-- Bottle 1.0L -->
+    <path d="M40,40 L40,75 Q40,110 5,145 L5,320 Q5,340 55,340 Q105,340 105,320 L105,145 Q70,110 70,75 L70,40 Z" fill="url(#gcBottle)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <!-- Bubbles -->
+    <circle cx="28" cy="180" r="4" fill="#ffffff" opacity="0.6"/>
+    <circle cx="82" cy="220" r="5" fill="#ffffff" opacity="0.6"/>
+    <circle cx="34" cy="280" r="3.5" fill="#ffffff" opacity="0.5"/>
+    <!-- Label -->
+    <rect x="6" y="165" width="98" height="110" rx="8" fill="url(#gcLabel)" stroke="#ffffff" stroke-width="1.5"/>
+    <rect x="10" y="169" width="90" height="102" rx="6" fill="none" stroke="#6ee7b7" stroke-width="1"/>
+    <!-- Tree icon on label -->
+    <path d="M55,178 L58,198 L52,198 Z" fill="#d97706"/>
+    <circle cx="55" cy="185" r="10" fill="#34d399"/>
+    <!-- Text -->
+    <text x="55" y="218" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="12" fill="#ffffff" letter-spacing="1">GOŞA ÇYNAR</text>
+    <text x="55" y="232" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="7.5" fill="#a7f3d0" letter-spacing="0.5">MINERALLAŞDYRYLAN</text>
+    <text x="55" y="244" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="8" fill="#facc15">GAZLANDYRYLAN</text>
+    <rect x="40" y="252" width="30" height="12" rx="6" fill="#ffffff"/>
+    <text x="55" y="261" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="8" fill="#047857">1.0 L</text>
+    <!-- Shine -->
+    <path d="M15,115 L15,325" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

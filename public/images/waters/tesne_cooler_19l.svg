@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgCooler" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coolerBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgCooler)"/>
+  <g transform="translate(115, 30)">
+    <!-- 19L Handle/Cap Neck -->
+    <rect x="68" y="10" width="34" height="24" rx="4" fill="#0284c7" stroke="#7dd3fc" stroke-width="2"/>
+    <rect x="62" y="34" width="46" height="8" rx="2" fill="#0369a1"/>
+    <!-- 19L Big Cooler Jug -->
+    <path d="M68,42 L68,70 Q68,95 20,115 L20,310 Q20,330 85,330 Q150,330 150,310 L150,115 Q102,95 102,70 L102,42 Z" fill="url(#coolerBlue)" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+    <!-- Ribs / Ring Indentations typical of 19L bottles -->
+    <line x1="22" y1="170" x2="148" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+    <line x1="22" y1="210" x2="148" y2="210" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+    <line x1="22" y1="250" x2="148" y2="250" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+    <!-- Label -->
+    <rect x="36" y="165" width="98" height="90" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+    <path d="M85,178 C80,186 78,194 85,198 C92,194 90,186 85,178 Z" fill="#0284c7"/>
+    <text x="85" y="215" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="13" fill="#0369a1" letter-spacing="1">TEŞNE</text>
+    <text x="85" y="228" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="8" fill="#64748b">KULER SUWY</text>
+    <rect x="66" y="235" width="38" height="14" rx="7" fill="#0284c7"/>
+    <text x="85" y="245" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="8" fill="#ffffff">19.0 L</text>
+    <!-- Highlight shine -->
+    <path d="M35,95 L35,315" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

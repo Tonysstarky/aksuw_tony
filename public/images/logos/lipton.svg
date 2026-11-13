@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="lipBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="lipRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#lipBg)"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  
+  <!-- Red Lipton shield badge -->
+  <ellipse cx="100" cy="95" rx="70" ry="38" fill="url(#lipRed)"/>
+  <ellipse cx="100" cy="95" rx="68" ry="36" fill="none" stroke="#fef08a" stroke-width="2"/>
+  
+  <!-- Green tea leaf -->
+  <path d="M100,45 C115,50 120,62 115,70 C105,75 95,70 95,60 Z" fill="#22c55e"/>
+  
+  <!-- Lipton bold white lettering -->
+  <text x="100" y="105" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="28" fill="#ffffff" letter-spacing="1">Lipton</text>
+  
+  <!-- Pill: ICE TEA & LEMON -->
+  <rect x="42" y="146" width="116" height="22" rx="11" fill="#713f12"/>
+  <text x="100" y="161" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="9" fill="#fef08a" letter-spacing="1.5">ICE TEA • TEAS</text>
+</svg>

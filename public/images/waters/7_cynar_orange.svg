@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg7c" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orangeLiquid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="35%" stop-color="#f97316"/>
+      <stop offset="70%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="orangeLabel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg7c)"/>
+  <g transform="translate(155, 35)">
+    <rect x="32" y="10" width="28" height="22" rx="4" fill="#ea580c" stroke="#fed7aa" stroke-width="1.5"/>
+    <rect x="29" y="32" width="34" height="6" rx="2" fill="#ea580c"/>
+    <path d="M34,38 L34,70 Q34,100 5,130 L5,290 Q5,305 45,305 Q85,305 85,290 L85,130 Q58,100 58,70 L58,38 Z" fill="url(#orangeLiquid)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <circle cx="25" cy="160" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="65" cy="200" r="4" fill="#ffffff" opacity="0.6"/>
+    <!-- Label -->
+    <rect x="6" y="145" width="78" height="95" rx="8" fill="url(#orangeLabel)" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="45" y="180" text-anchor="middle" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="28" fill="#ffffff">7</text>
+    <text x="45" y="198" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="12" fill="#78350f" letter-spacing="1">ÇYNAR</text>
+    <text x="45" y="212" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="7.5" fill="#ffffff">PYRTYKAL</text>
+    <rect x="30" y="220" width="28" height="12" rx="6" fill="#ffffff"/>
+    <text x="44" y="229" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="8" fill="#ea580c">0.5 L</text>
+    <path d="M14,105 L14,295" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  </g>
+</svg>

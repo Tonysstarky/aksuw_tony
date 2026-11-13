@@ -47,16 +47,22 @@ class Water extends Model
         return number_format((float) $this->price, 2).' TMT';
     }
 
-    /** Surat: URL (seeder) ýa-da storage/public ýoly (ýüklenen) */
+    /** Surat: URL (seeder), public/images/ ýa-da storage/public ýoly (ýüklenen) */
     public function getImageUrlAttribute(): ?string
     {
         if (! $this->image) {
             return null;
         }
 
-        return Str::startsWith($this->image, ['http://', 'https://'])
-            ? $this->image
-            : asset('storage/'.$this->image);
+        if (Str::startsWith($this->image, ['http://', 'https://'])) {
+            return $this->image;
+        }
+
+        if (Str::startsWith($this->image, ['/images/', 'images/'])) {
+            return asset(ltrim($this->image, '/'));
+        }
+
+        return asset('storage/'.$this->image);
     }
 
     // ─── Validation ───

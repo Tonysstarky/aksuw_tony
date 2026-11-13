@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgBon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bonBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#bae6fd" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgBon)"/>
+  <g transform="translate(155, 30)">
+    <rect x="34" y="10" width="26" height="20" rx="3" fill="#0284c7" stroke="#7dd3fc" stroke-width="1.5"/>
+    <rect x="31" y="30" width="32" height="6" rx="2" fill="#0284c7"/>
+    <path d="M35,36 L35,68 Q35,95 10,125 L10,285 Q10,300 47,300 Q84,300 84,285 L84,125 Q59,95 59,68 L59,36 Z" fill="url(#bonBottle)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+    <!-- Bonaqua Label -->
+    <rect x="11" y="150" width="72" height="75" rx="6" fill="#0284c7" stroke="#ffffff" stroke-width="1"/>
+    <!-- Water wave on label -->
+    <path d="M14,168 Q32,160 47,165 T80,162" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+    <text x="47" y="185" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="12" fill="#ffffff" letter-spacing="1">BONAQUA</text>
+    <text x="47" y="198" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="7" fill="#e0f2fe">ARASSA SUW</text>
+    <rect x="34" y="204" width="26" height="10" rx="5" fill="#ffffff"/>
+    <text x="47" y="212" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="7" fill="#0284c7">0.5 L</text>
+    <!-- Highlight shine -->
+    <path d="M18,95 L18,290" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  </g>
+</svg>

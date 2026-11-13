@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="gcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="treeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#gcBg)"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(52,211,153,0.3)" stroke-width="2"/>
+  <!-- Two Chinar Trees (Goşa Çynar) -->
+  <g transform="translate(68, 50)">
+    <path d="M12,55 L16,55 L15,35 Q18,30 24,24 Q28,15 15,4 Q0,16 6,24 Q11,30 13,35 Z" fill="url(#treeGold)"/>
+    <rect x="12" y="52" width="4" height="24" rx="2" fill="#d97706"/>
+  </g>
+  <g transform="translate(98, 44) scale(1.18)">
+    <path d="M12,55 L16,55 L15,35 Q18,30 24,24 Q28,15 15,4 Q0,16 6,24 Q11,30 13,35 Z" fill="#6ee7b7"/>
+    <rect x="12" y="52" width="4" height="24" rx="2" fill="#b45309"/>
+  </g>
+  <!-- Text -->
+  <text x="100" y="156" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="1.5">GOŞA ÇYNAR</text>
+  <text x="100" y="174" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="9" fill="#a7f3d0" letter-spacing="2">SUW • KOLA • 7 ÇYNAR</text>
+</svg>

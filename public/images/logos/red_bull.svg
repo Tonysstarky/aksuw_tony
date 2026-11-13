@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="rbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="sunGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#rbBg)"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- Golden Sun -->
+  <circle cx="100" cy="85" r="32" fill="url(#sunGold)"/>
+  
+  <!-- Left charging bull (stylized silhouette) -->
+  <path d="M50,95 Q68,68 88,80 Q94,84 96,87 L92,92 Q82,88 72,94 Q64,98 55,108 L48,104 Z" fill="#ef4444"/>
+  <path d="M62,75 Q68,65 72,70 Z" fill="#ef4444"/> <!-- Horn -->
+  
+  <!-- Right charging bull (stylized silhouette) -->
+  <path d="M150,95 Q132,68 112,80 Q106,84 104,87 L108,92 Q118,88 128,94 Q136,98 145,108 L152,104 Z" fill="#ef4444"/>
+  <path d="M138,75 Q132,65 128,70 Z" fill="#ef4444"/> <!-- Horn -->
+
+  <!-- Red Bull lettering -->
+  <text x="100" y="148" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="24" fill="#ffffff" letter-spacing="1">Red Bull</text>
+  <text x="100" y="168" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="8.5" fill="#93c5fd" letter-spacing="2">ENERGY DRINK</text>
+</svg>
