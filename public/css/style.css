@@ -597,10 +597,14 @@ td small { color: var(--muted); display: block; }
    3D / ANIMASIÝA GATLAGY  (fx.js, bottle.js)
    ========================================================================== */
 
-/* ───────── 3D şişe ───────── */
+/* ───────── 3D şişe (Suw damjasy & tolkuny) ───────── */
 .bottle-canvas {
-    height: 255px; width: auto; aspect-ratio: 260 / 330; display: block;
-    filter: drop-shadow(0 18px 26px rgba(0, 10, 70, .55)) drop-shadow(0 0 22px rgba(80, 170, 255, .35));
+    width: 220px;
+    max-width: 100%;
+    height: 265px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 18px 26px rgba(0, 10, 70, .55)) drop-shadow(0 0 25px rgba(56, 189, 248, .45));
     pointer-events: none;
 }
 
@@ -643,6 +647,156 @@ html.js .rv.rv-in {
 }
 @keyframes tap { from { transform: scale(.3); opacity: 1; } to { transform: scale(7); opacity: 0; } }
 
+/* ───────── 3D Suw Damjasy Sahypa Geçiş Gatlagy ───────── */
+.page-water-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: radial-gradient(circle at center, rgba(14, 30, 90, 0.94) 0%, rgba(4, 9, 36, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page-water-loader.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.loader-drop-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loader-3d-drop {
+    width: 76px;
+    height: 92px;
+    filter: drop-shadow(0 15px 30px rgba(56, 189, 248, 0.65));
+    animation: loaderDropFloat 1.2s ease-in-out infinite alternate;
+}
+@keyframes loaderDropFloat {
+    from { transform: translateY(-8px) scale(0.96, 1.04); }
+    to { transform: translateY(8px) scale(1.04, 0.96); }
+}
+.loader-ripple {
+    position: absolute;
+    bottom: 22px;
+    width: 90px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(125, 211, 252, 0.7);
+    pointer-events: none;
+}
+.loader-ripple.r1 {
+    animation: loaderRippleAnim 1.6s ease-out infinite;
+}
+.loader-ripple.r2 {
+    animation: loaderRippleAnim 1.6s ease-out infinite 0.6s;
+}
+@keyframes loaderRippleAnim {
+    0% { transform: scale(0.3); opacity: 0.9; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+.loader-text {
+    margin-top: 24px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #bae6fd;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+/* ───────── Kategoriýa Kartoçkalary (3D Suw Damjasy) ───────── */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 22px;
+    border-radius: 22px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.category-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(2, 12, 65, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    border-color: rgba(56, 189, 248, 0.6);
+}
+.cat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.cat-drop-emblem {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(37, 99, 235, 0.2) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0, 15, 60, 0.4);
+}
+.cat-drop-symbol {
+    font-size: 22px;
+    filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.8));
+    animation: dropPulse 2s ease-in-out infinite alternate;
+}
+.cat-icon-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    font-size: 14px;
+}
+@keyframes dropPulse {
+    from { transform: scale(0.92); }
+    to { transform: scale(1.08); }
+}
+.pill-water {
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    color: #bae6fd;
+    font-size: 11px;
+    font-weight: 700;
+}
+.cat-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+    line-height: 1.3;
+}
+.cat-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.5;
+    margin: 0 0 14px 0;
+}
+.cat-card-footer {
+    margin-top: auto;
+}
+.cat-link-text {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #38bdf8;
+    transition: color 0.2s;
+}
+.category-card:hover .cat-link-text {
+    color: #ffffff;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .wt, .bubbles, .tap-ripple { display: none; }
+    .wt, .bubbles, .tap-ripple, .page-water-loader { display: none; }
 }

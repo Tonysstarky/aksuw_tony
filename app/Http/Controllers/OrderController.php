@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderNotificationMail;
 use App\Models\Order;
 use App\Models\Water;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -52,6 +54,16 @@ class OrderController extends Controller
             return back()
                 ->withErrors(['quantity' => __('messages.insufficient_stock')])
                 ->withInput();
+        }
+
+        // Esasy administratora (atagapy@gmail.com) we sargyt edene Gmail haty ugratmak
+        try {
+            Mail::to('atagapy@gmail.com')->send(new OrderNotificationMail($order));
+            if ($order->user && $order->user->email && $order->user->email !== 'atagapy@gmail.com') {
+                Mail::to($order->user->email)->send(new OrderNotificationMail($order));
+            }
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Sargyt e-poçtasy ugradylmady: '.$e->getMessage());
         }
 
         return redirect()->route('orders.index')->with('success', __('messages.order_created'));

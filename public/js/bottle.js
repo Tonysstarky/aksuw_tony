@@ -6,18 +6,27 @@
    ========================================================================== */
 (function () {
     'use strict';
-    var cv = document.getElementById('bottleCanvas');
-    if (!cv) return;
-    var ctx = cv.getContext('2d');
-    var W = 260, H = 330, PX = 130, PY = 150;           // mantyky ölçegler we aýlanma nokady
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    function fit() {
-        var w = cv.clientWidth || W;
-        cv.width = Math.round(w * dpr); cv.height = Math.round(w * (H / W) * dpr);
-    }
-    fit(); window.addEventListener('resize', fit);
+    function initBottle() {
+        var cv = document.getElementById('bottleCanvas');
+        if (!cv) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initBottle, { once: true });
+            }
+            return;
+        }
+        var ctx = cv.getContext('2d');
+        if (!ctx) return;
+
+        var W = 260, H = 330, PX = 130, PY = 150;           // mantyky ölçegler we aýlanma nokady
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        function fit() {
+            var w = cv.clientWidth || W;
+            cv.width = Math.round(w * dpr); cv.height = Math.round(w * (H / W) * dpr);
+        }
+        fit(); window.addEventListener('resize', fit);
 
     // ───── ýagdaý ─────
     var ang = 0, angTarget = 0, angSlow = 0;
@@ -186,4 +195,11 @@
         }).observe(cv);
     }
     requestAnimationFrame(step);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBottle);
+    } else {
+        initBottle();
+    }
 })();

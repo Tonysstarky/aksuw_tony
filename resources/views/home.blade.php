@@ -184,25 +184,44 @@
 @endif
 
 @if($categories->isNotEmpty())
-    <h2 class="section-title">📁 {{ __('messages.categories_title_home') }}</h2>
+    <div class="head mt-lg" style="margin-bottom:14px">
+        <div>
+            <h2 class="section-title" style="margin:0">📁 {{ __('messages.categories_title_home') }}</h2>
+            <p class="muted" style="font-size:13px;margin-top:4px">Ýurdumyzyň iň esasy agyz suwy we tebigy içgi brendleri</p>
+        </div>
+        @auth
+            <a href="{{ route('categories.index') }}" class="btn btn-ghost btn-sm">{{ __('messages.view_all') }} →</a>
+        @endauth
+    </div>
+
     <div class="grid cols-3">
         @foreach($categories as $category)
-            <div class="glass pad-sm">
-                <div class="row">
-                    <span class="cat-icon">{{ $category->icon }}</span>
-                    <div>
-                        <div class="card-title">{{ $category->name }}</div>
-                        <span class="pill">{{ $category->waters_count }} {{ __('messages.waters_count') }}</span>
+            @php $catLink = auth()->check() ? route('waters.index', ['category' => $category->id]) : route('login'); @endphp
+            <a href="{{ $catLink }}" class="category-card">
+                <div class="cat-card-header">
+                    <div class="cat-drop-emblem">
+                        <span class="cat-drop-symbol">💧</span>
+                        <span class="cat-icon-badge">{{ $category->icon }}</span>
                     </div>
+                    <span class="pill pill-water">{{ $category->waters_count }} {{ __('messages.waters_count') }}</span>
                 </div>
-            </div>
+                <div class="cat-card-body">
+                    <h3 class="cat-title">{{ $category->name }}</h3>
+                    @if($category->description)
+                        <p class="cat-desc">{{ Str::limit($category->description, 85) }}</p>
+                    @endif
+                </div>
+                <div class="cat-card-footer">
+                    <span class="cat-link-text">Önümleri gör →</span>
+                </div>
+            </a>
         @endforeach
     </div>
 @endif
 @endsection
 
 @push('scripts')
-<script src="{{ asset('js/bottle.js') }}" defer></script>
+<script src="{{ asset('js/bottle.js') }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.getElementById('heroArtWrapper');
@@ -219,35 +238,36 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentDropX = 0, currentDropY = 0;
     let isHovered = false;
 
-    // Myskany nirä hereket etdirseň, damja we 3D glass kartoçka şol tarapa egrelýär
-    wrapper.addEventListener('mousemove', function (e) {
+    // Ýumşak, tebigy suwuklyk ýaly 3D hereket (rezki däl, örän tekiz we durnukly)
+    wrapper.addEventListener('pointermove', function (e) {
         const rect = wrapper.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        // Normalised coordinates (-1 to +1) from center
+        // Normalised -1 to +1
         const normX = Math.max(-1, Math.min(1, ((x / rect.width) * 2) - 1));
         const normY = Math.max(-1, Math.min(1, ((y / rect.height) * 2) - 1));
 
         isHovered = true;
-        targetRotX = -normY * 18; // Max 18deg 3D tilt
-        targetRotY = normX * 18;
-        targetDropX = normX * 32; // Suw damjasy myskanyň yzyndan hereket edýär
-        targetDropY = normY * 32;
+        // Ýumşak 6 graduslyk egrelme
+        targetRotX = -normY * 6;
+        targetRotY = normX * 6;
+        targetDropX = normX * 10;
+        targetDropY = normY * 10;
 
         if (glare) {
             const glareX = ((x / rect.width) * 100).toFixed(1);
             const glareY = ((y / rect.height) * 100).toFixed(1);
-            glare.style.opacity = '1';
-            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.12) 35%, transparent 70%)`;
+            glare.style.opacity = '0.6';
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 35%, transparent 65%)`;
         }
 
         if (pedestal) {
-            pedestal.style.transform = `rotate(-14deg) skewX(${-12 + (normX * 9)}deg) scale(${1 + (normY * 0.04)})`;
+            pedestal.style.transform = `rotate(-14deg) skewX(${-12 + (normX * 4)}deg)`;
         }
     });
 
-    wrapper.addEventListener('mouseleave', function () {
+    wrapper.addEventListener('pointerleave', function () {
         isHovered = false;
         targetRotX = 0;
         targetRotY = 0;
@@ -261,16 +281,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // 60 FPS ýumşak LERP fiziki animasiýa
+    // 60 FPS inersiýaly süzgüç (damping: 0.05)
     function renderLoop() {
-        const factor = isHovered ? 0.14 : 0.08;
-        currentRotX += (targetRotX - currentRotX) * factor;
-        currentRotY += (targetRotY - currentRotY) * factor;
-        currentDropX += (targetDropX - currentDropX) * factor;
-        currentDropY += (targetDropY - currentDropY) * factor;
+        const damping = 0.05;
+        currentRotX += (targetRotX - currentRotX) * damping;
+        currentRotY += (targetRotY - currentRotY) * damping;
+        currentDropX += (targetDropX - currentDropX) * damping;
+        currentDropY += (targetDropY - currentDropY) * damping;
 
-        card.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
-        drop.style.transform = `translate3d(${currentDropX.toFixed(2)}px, ${currentDropY.toFixed(2)}px, 50px) scale(${isHovered ? 1.04 : 1})`;
+        card.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(3)}deg) rotateY(${currentRotY.toFixed(3)}deg)`;
+        drop.style.transform = `translate3d(${currentDropX.toFixed(2)}px, ${currentDropY.toFixed(2)}px, 25px)`;
 
         requestAnimationFrame(renderLoop);
     }

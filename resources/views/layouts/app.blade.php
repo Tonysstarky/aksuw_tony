@@ -94,11 +94,66 @@
     </footer>
 </main>
 
+<!-- 3D Suw Damjasy Sahypa Geçiş Gatlagy (Smooth Page Transition Loader) -->
+<div id="pageWaterLoader" class="page-water-loader" aria-hidden="true">
+    <div class="loader-drop-wrapper">
+        <svg class="loader-3d-drop" viewBox="0 0 100 120">
+            <defs>
+                <radialGradient id="drop3dGrad" cx="35%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="25%" stop-color="#7dd3fc"/>
+                    <stop offset="60%" stop-color="#0284c7"/>
+                    <stop offset="100%" stop-color="#075985"/>
+                </radialGradient>
+                <filter id="dropGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+            </defs>
+            <path d="M50,10 C42,28 15,65 15,85 C15,104 31,115 50,115 C69,115 85,104 85,85 C85,65 58,28 50,10 Z" 
+                  fill="url(#drop3dGrad)" filter="url(#dropGlowFilter)"/>
+            <ellipse cx="40" cy="75" rx="6" ry="14" fill="#ffffff" opacity="0.8" transform="rotate(-25 40 75)"/>
+        </svg>
+        <div class="loader-ripple r1"></div>
+        <div class="loader-ripple r2"></div>
+        <div class="loader-text">Ak Suw Zawody...</div>
+    </div>
+</div>
+
 <script>
     // Surat ýüklenmese (ýalňyşlyk bolsa) çalyşma görkezýäris
     const fallback = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%236c92ff'/><stop offset='1' stop-color='%231230d4'/></linearGradient></defs><rect width='400' height='300' fill='url(%23g)'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='90'>💧</text></svg>";
     document.querySelectorAll('img[data-fallback]').forEach(function (img) {
         img.addEventListener('error', function () { this.onerror = null; this.src = fallback; });
+    });
+
+    // Sahypa açylanda ýumşak aýyrmak
+    window.addEventListener('load', function () {
+        const loader = document.getElementById('pageWaterLoader');
+        if (loader) loader.classList.remove('active');
+    });
+
+    // Sahypadan sahypa geçilende suw damjasy çyksyn
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('javascript') || link.target === '_blank') return;
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+        try {
+            const url = new URL(href, window.location.origin);
+            if (url.origin === window.location.origin && (url.pathname !== window.location.pathname || url.search !== window.location.search)) {
+                const loader = document.getElementById('pageWaterLoader');
+                if (loader) loader.classList.add('active');
+            }
+        } catch (_) {}
+    });
+
+    // Form ugradylanda (sargyt, sorag bermek) suw damjasy çyksyn
+    document.addEventListener('submit', function (e) {
+        const loader = document.getElementById('pageWaterLoader');
+        if (loader && !e.defaultPrevented) loader.classList.add('active');
     });
 </script>
 @stack('scripts')

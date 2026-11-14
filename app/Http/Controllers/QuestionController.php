@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\QuestionAnsweredMail;
+use App\Mail\QuestionNotificationMail;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class QuestionController extends Controller
 {
@@ -25,7 +29,14 @@ class QuestionController extends Controller
         $validated = $request->validate(Question::validationRules());
 
         // auth()->user()->questions()->create(): user_id awtomatiki goýulýar
-        auth()->user()->questions()->create($validated);
+        $question = auth()->user()->questions()->create($validated);
+
+        // Sorag hiç kime görünmän göni administratora (atagapy@gmail.com) e-poçta barýar
+        try {
+            Mail::to('atagapy@gmail.com')->send(new QuestionNotificationMail($question));
+        } catch (\Throwable $e) {
+            Log::warning('Sorag e-poçtasy ugradylmady: '.$e->getMessage());
+        }
 
         return redirect()->route('questions.my')->with('success', __('messages.question_sent'));
     }
@@ -48,6 +59,15 @@ class QuestionController extends Controller
             'answer' => $validated['answer'],
             'status' => 'answered',
         ]);
+
+        // Jogap berilende sorag soran ulanyjynyň Gmail-ine göni jogap haty ugradylýar
+        try {
+            if ($question->email) {
+                Mail::to($question->email)->send(new QuestionAnsweredMail($question));
+            }
+        } catch (\Throwable $e) {
+            Log::warning('Jogap e-poçtasy ugradylmady: '.$e->getMessage());
+        }
 
         return redirect()->route('questions.index')->with('success', __('messages.answer_sent'));
     }
