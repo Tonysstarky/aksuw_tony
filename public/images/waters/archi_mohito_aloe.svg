@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgMohito" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#047857" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mohitoCan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="35%" stop-color="#10b981"/>
+      <stop offset="70%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="silverTopM" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <filter id="shadowMohito" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#020820" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgMohito)"/>
+  <ellipse cx="200" cy="355" rx="70" ry="12" fill="#10b981" opacity="0.3"/>
+
+  <!-- Can Body with Shadow -->
+  <g transform="translate(140, 45)" filter="url(#shadowMohito)">
+    <!-- Top Rim -->
+    <ellipse cx="60" cy="25" rx="55" ry="14" fill="url(#silverTopM)" stroke="#cbd5e1" stroke-width="2"/>
+    <ellipse cx="60" cy="24" rx="46" ry="10" fill="#64748b"/>
+    <rect x="52" y="16" width="16" height="10" rx="3" fill="#cbd5e1"/>
+
+    <!-- Can Cylinder -->
+    <path d="M5,25 L5,265 Q5,285 60,285 Q115,285 115,265 L115,25 Z" fill="url(#mohitoCan)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+
+    <!-- Title -->
+    <text x="60" y="82" text-anchor="middle" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="3">ARÇI</text>
+    <text x="60" y="104" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="11.5" fill="#fef08a" letter-spacing="2">MOHITO &amp; ALOE</text>
+    <text x="60" y="120" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="8.5" fill="#e0f2fe" letter-spacing="1">PREMIUM SPARKLING</text>
+
+    <!-- Lime & Mint & Aloe Illustration -->
+    <!-- Lime Slice -->
+    <circle cx="50" cy="182" r="30" fill="#bef264" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="50" cy="182" r="24" fill="#84cc16"/>
+    <polygon points="50,182 40,160 60,160" fill="#d9f99d"/>
+    <polygon points="50,182 30,172 40,192" fill="#d9f99d"/>
+    <polygon points="50,182 60,192 70,172" fill="#d9f99d"/>
+
+    <!-- Fresh Mint Leaves -->
+    <path d="M72,160 Q88,145 92,162 Q92,178 75,172 Z" fill="#22c55e" stroke="#ffffff" stroke-width="1.2"/>
+    <path d="M76,162 L88,160" stroke="#15803d" stroke-width="1"/>
+
+    <!-- Aloe Vera Spike -->
+    <path d="M30,190 Q15,210 20,230 Q32,225 36,200 Z" fill="#15803d" stroke="#86efac" stroke-width="1.2"/>
+
+    <!-- Bubbles -->
+    <circle cx="28" cy="140" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="95" cy="195" r="4" fill="#ffffff" opacity="0.6"/>
+    <circle cx="35" cy="245" r="2.5" fill="#ffffff" opacity="0.5"/>
+    <circle cx="85" cy="235" r="3" fill="#ffffff" opacity="0.6"/>
+
+    <!-- Volume Badge -->
+    <rect x="40" y="244" width="40" height="16" rx="8" fill="#ffffff"/>
+    <text x="60" y="255" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="9" fill="#065f46">0.25 L</text>
+
+    <!-- Shine -->
+    <rect x="18" y="28" width="10" height="240" rx="5" fill="#ffffff" opacity="0.3"/>
+  </g>
+</svg>

@@ -172,22 +172,26 @@ class AuthController extends Controller
         $email = $validated['email'];
         $user = User::where('email', $email)->first();
 
-        // Ulanyjy ýok bolsa-da şol bir jogap berýäris (e-poçta barlamaga rugsat bermeýäris)
-        if ($user) {
-            $code = (string) random_int(100000, 999999);
-
-            DB::table('password_reset_tokens')->updateOrInsert(
-                ['email' => $email],
-                ['token' => Hash::make($code), 'created_at' => now()]
-            );
-
-            $this->deliver(
-                $email,
-                new PasswordResetCodeMail($code, $user->name, self::CODE_MINUTES),
-                $code,
-                'demo_reset_code'
-            );
+        // Eger ulanyjy ulgamda ýok bolsa, anyk habar berýäris
+        if (! $user) {
+            return back()
+                ->withErrors(['email' => __('messages.user_not_found')])
+                ->withInput();
         }
+
+        $code = (string) random_int(100000, 999999);
+
+        DB::table('password_reset_tokens')->updateOrInsert(
+            ['email' => $email],
+            ['token' => Hash::make($code), 'created_at' => now()]
+        );
+
+        $this->deliver(
+            $email,
+            new PasswordResetCodeMail($code, $user->name, self::CODE_MINUTES),
+            $code,
+            'demo_reset_code'
+        );
 
         session(['reset_email' => $email]);
 

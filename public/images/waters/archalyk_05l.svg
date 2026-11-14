@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgGlow05" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottleGrad05" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#7dd3fc" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="labelGrad05" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <filter id="shadow05" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#020830" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgGlow05)"/>
+  <ellipse cx="200" cy="365" rx="75" ry="12" fill="#38bdf8" opacity="0.3"/>
+
+  <g filter="url(#shadow05)">
+    <!-- Sport Blue Cap -->
+    <rect x="184" y="60" width="32" height="22" rx="4" fill="#0284c7" stroke="#bae6fd" stroke-width="1.5"/>
+    <rect x="181" y="82" width="38" height="6" rx="2" fill="#0369a1"/>
+
+    <!-- Ergonomic Handheld 0.5L Bottle Shape with Waisted Grip -->
+    <path d="M186,88 L186,115 
+             Q186,135 158,160 
+             L158,220 
+             Q164,245 160,270 
+             L160,340 
+             Q160,355 174,358 
+             L226,358 
+             Q240,355 240,340 
+             L240,270 
+             Q236,245 242,220 
+             L242,160 
+             Q214,135 214,115 
+             L214,88 Z" 
+          fill="url(#bottleGrad05)" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+    <!-- Dynamic Sport Grip Ridges -->
+    <path d="M162,175 Q200,183 238,175" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M163,310 Q200,318 237,310" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M164,325 Q200,333 236,325" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+
+    <!-- 0.5L Label -->
+    <rect x="160" y="195" width="80" height="98" rx="8" fill="url(#labelGrad05)" stroke="#ffffff" stroke-width="1.8"/>
+
+    <!-- Mountain Icon -->
+    <polygon points="200,208 215,226 185,226" fill="#ffffff"/>
+    <polygon points="186,216 198,226 174,226" fill="#7dd3fc"/>
+    <polygon points="214,216 226,226 202,226" fill="#7dd3fc"/>
+
+    <text x="200" y="242" text-anchor="middle" font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-weight="900" font-size="13.5" fill="#ffffff" letter-spacing="1">ARÇALYK</text>
+    <text x="200" y="254" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="7" fill="#bae6fd" letter-spacing="0.8">TEBIGY AGYZ SUWY</text>
+
+    <!-- 0.5L Badge -->
+    <rect x="184" y="263" width="32" height="15" rx="7.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1"/>
+    <text x="200" y="274" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="8.5" fill="#ffffff">0.5 L</text>
+
+    <!-- Specular Highlight -->
+    <path d="M168,135 L168,345" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+</svg>

@@ -65,6 +65,7 @@ return [
     'welcome_back' => 'Welcome back, :name!',
     'account_created' => 'Your account was created successfully!',
     'logged_out' => 'You have been logged out.',
+    'user_not_found' => 'No account found with this email. Please register first!',
     'code_sent' => 'If :email has an account, a 6-digit code was sent.',
     'code_invalid' => 'The code is invalid or has expired.',
     'password_reset_done' => 'Password updated and you are signed in.',

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgDushes" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dushesLiquid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde68a" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#fcd34d" stop-opacity="0.75"/>
+      <stop offset="85%" stop-color="#f59e0b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="dushesLabel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="shadowDushes" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#020820" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgDushes)"/>
+  <ellipse cx="200" cy="365" rx="75" ry="12" fill="#f59e0b" opacity="0.35"/>
+
+  <g filter="url(#shadowDushes)">
+    <!-- Golden Cap -->
+    <rect x="184" y="45" width="32" height="24" rx="4" fill="#f59e0b" stroke="#fef08a" stroke-width="1.5"/>
+    <line x1="184" y1="53" x2="216" y2="53" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <line x1="184" y1="61" x2="216" y2="61" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <rect x="181" y="69" width="38" height="6" rx="2" fill="#d97706"/>
+
+    <!-- Clear Lemonade Bottle with Golden Liquid -->
+    <path d="M186,75 L186,105 
+             Q186,128 156,155 
+             L156,340 
+             Q156,356 172,360 
+             L228,360 
+             Q244,356 244,340 
+             L244,155 
+             Q214,128 214,105 
+             L214,75 Z" 
+          fill="url(#dushesLiquid)" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+    <!-- Effervescent Lemonade Bubbles inside -->
+    <circle cx="172" cy="180" r="3.5" fill="#ffffff" opacity="0.8"/>
+    <circle cx="228" cy="210" r="4" fill="#ffffff" opacity="0.7"/>
+    <circle cx="178" cy="310" r="5" fill="#ffffff" opacity="0.8"/>
+    <circle cx="220" cy="330" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="195" cy="160" r="3" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Label -->
+    <rect x="156" y="185" width="88" height="112" rx="10" fill="url(#dushesLabel)" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Brand Header -->
+    <text x="200" y="204" text-anchor="middle" font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-weight="900" font-size="13" fill="#ffffff" letter-spacing="1.2">ARÇALYK</text>
+
+    <!-- Ripe Pear (Armyt / Дюшес) & Orange Illustration -->
+    <!-- Pear Body -->
+    <path d="M192,214 Q196,210 200,214 Q204,222 208,230 Q212,240 202,242 Q192,242 188,234 Q186,224 192,214 Z" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+    <!-- Pear Stem & Leaf -->
+    <path d="M196,212 Q196,206 198,204" stroke="#713f12" stroke-width="1.5" fill="none"/>
+    <ellipse cx="202" cy="207" rx="3.5" ry="1.8" fill="#65a30d" transform="rotate(-20 202 207)"/>
+
+    <!-- Orange Slice (Pyrtykal) -->
+    <circle cx="216" cy="232" r="11" fill="#ea580c" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="216" cy="232" r="8" fill="#fb923c"/>
+    <polygon points="216,232 212,225 220,225" fill="#fed7aa"/>
+    <polygon points="216,232 210,236 216,240" fill="#fed7aa"/>
+    <polygon points="216,232 222,236 222,228" fill="#fed7aa"/>
+
+    <!-- Title on Label -->
+    <text x="200" y="258" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="10.5" fill="#fef08a" letter-spacing="0.8">DÝUŞES &amp; PYRTYKAL</text>
+    <text x="200" y="270" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="7" fill="#ffffff" letter-spacing="0.6">MIWELI LIMONAD</text>
+
+    <!-- Volume Badge -->
+    <rect x="184" y="276" width="32" height="14" rx="7" fill="#ffffff"/>
+    <text x="200" y="286" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="8.5" fill="#ea580c">0.5 L</text>
+
+    <!-- Specular Highlight -->
+    <path d="M165,130 L165,345" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  </g>
+</svg>

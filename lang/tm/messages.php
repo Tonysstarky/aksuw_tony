@@ -65,6 +65,7 @@ return [
     'welcome_back' => 'Hoş geldiňiz, :name!',
     'account_created' => 'Hasabyňyz üstünlikli döredildi!',
     'logged_out' => 'Ulgamdan çykdyňyz.',
+    'user_not_found' => 'Bu e-poçta bilen hasap tapylmady. Ilki agza boluň!',
     'code_sent' => 'Eger :email hasapda bar bolsa, 6 belgili kod ugradyldy.',
     'code_invalid' => 'Kod nädogry ýa-da möhleti geçdi.',
     'password_reset_done' => 'Parol täzelendi we ulgama girdiňiz.',

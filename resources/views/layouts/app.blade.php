@@ -17,10 +17,27 @@
     <div class="orb orb-4"></div>
 </div>
 
+<canvas class="bubbles" id="bubbles" aria-hidden="true"></canvas>
+
+<div class="flow" id="flow" aria-hidden="true">
+    <div class="flow-stream" id="flowStream"></div>
+    <div class="flow-drop" id="flowDrop"></div>
+    <div class="flow-ripple" id="flowRipple"></div>
+</div>
+
 <header class="navbar">
     <div class="container">
         <div class="glass nav-inner">
-            <a href="{{ route('home') }}" class="brand"><span class="drop">💧</span> {{ __('messages.brand') }}</a>
+            <a href="{{ route('home') }}" class="brand">
+                <span class="logo3d" id="logo3d" aria-hidden="true">
+                    <span class="logo3d-inner" id="logo3dInner">
+                        <svg class="l3 l3-back" viewBox="0 0 24 28"><path d="M12 1.5C12 1.5 3.5 11.2 3.5 17.2a8.5 8.5 0 0 0 17 0C20.5 11.2 12 1.5 12 1.5Z" fill="#0a1a9a"/></svg>
+                        <svg class="l3 l3-mid" viewBox="0 0 24 28"><defs><radialGradient id="dropGrad" cx="35%" cy="62%" r="75%"><stop offset="0" stop-color="#bfe3ff"/><stop offset=".45" stop-color="#3b9bff"/><stop offset="1" stop-color="#1230d4"/></radialGradient></defs><path d="M12 1.5C12 1.5 3.5 11.2 3.5 17.2a8.5 8.5 0 0 0 17 0C20.5 11.2 12 1.5 12 1.5Z" fill="url(#dropGrad)"/></svg>
+                        <svg class="l3 l3-front" viewBox="0 0 24 28"><path d="M7.2 16.2c0-3 2-6 3.6-8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".85"/><ellipse cx="9" cy="20.5" rx="1.6" ry="1" fill="#fff" opacity=".55"/></svg>
+                    </span>
+                </span>
+                <span>{{ __('messages.brand') }}</span>
+            </a>
 
             <nav class="nav-links">
                 <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">{{ __('messages.nav_home') }}</a>
@@ -78,12 +95,12 @@
 </main>
 
 <script>
-    // Surat ýüklenmese (internet ýok bolsa) owadan çalyşma görkezýäris
+    // Surat ýüklenmese (ýalňyşlyk bolsa) çalyşma görkezýäris
     const fallback = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%236c92ff'/><stop offset='1' stop-color='%231230d4'/></linearGradient></defs><rect width='400' height='300' fill='url(%23g)'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='90'>💧</text></svg>";
     document.querySelectorAll('img[data-fallback]').forEach(function (img) {
         img.addEventListener('error', function () { this.onerror = null; this.src = fallback; });
-        if (img.complete && img.naturalWidth === 0) { img.src = fallback; }
     });
 </script>
+@stack('scripts')
 </body>
 </html>

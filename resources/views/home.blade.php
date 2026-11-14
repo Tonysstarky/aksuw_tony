@@ -31,10 +31,13 @@
             </div>
         </div>
 
-        <!-- Reference Glassmorphism Artwork with Custom Photo / Logo -->
-        <div class="hero-art-wrapper">
-            <div class="hero-art-pedestal"></div>
-            <div class="glassmorphism-card">
+        <!-- Reference Glassmorphism Artwork with Custom Photo / Logo & 3D Interactive Parallax -->
+        <div class="hero-art-wrapper" id="heroArtWrapper">
+            <div class="hero-art-pedestal" id="heroPedestal"></div>
+            <div class="glassmorphism-card" id="heroGlassCard">
+                <!-- 3D Specular Light Glare (Mousa görä ýagtylyk düşýär) -->
+                <div class="gc-glare" id="gcGlare"></div>
+
                 <div class="gc-top">
                     <span>AK SUW</span>
                     <span>YUSUP GAJAÝEW</span>
@@ -43,10 +46,9 @@
 
                 {{-- 📸 FOTOGRAF ÝA-DA LOGO: Eger öz suratyňyzy goýmak isleseňiz, aşakdaky src="..." ýerine suratyň adyny ýa-da linkini ýazyň --}}
                 <div class="gc-media-container">
-                    <img src="{{ asset('images/logos/hero_brand_logo.svg') }}" 
-                         alt="Ak Suw Zawody - Yusup Gajaýew" 
-                         class="hero-media-img" 
-                         id="heroArtImage">
+                    <div class="hero-drop-interactive" id="heroDropInteractive">
+                        <canvas id="bottleCanvas" class="bottle-canvas" role="img" aria-label="3D suw şişesi"></canvas>
+                    </div>
                 </div>
 
                 <div class="gc-bottom">
@@ -170,7 +172,10 @@
                     <div class="card-img"><img src="{{ $water->image_url }}" alt="{{ $water->name }}" data-fallback loading="lazy"></div>
                     <div class="card-body">
                         <div class="card-title">{{ $water->name }}</div>
-                        <span class="muted">🔒 {{ __('messages.locked') }}</span>
+                        <div class="row" style="margin-top:auto; justify-content:space-between; align-items:center;">
+                            <span class="price">{{ number_format($water->price, 2) }} {{ __('messages.currency') }}</span>
+                            <span class="badge badge-awaiting" style="font-size:11px">🔒 {{ __('messages.locked') }}</span>
+                        </div>
                     </div>
                 </a>
             @endauth
@@ -195,3 +200,81 @@
     </div>
 @endif
 @endsection
+
+@push('scripts')
+<script src="{{ asset('js/bottle.js') }}" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.getElementById('heroArtWrapper');
+    const card = document.getElementById('heroGlassCard');
+    const drop = document.getElementById('heroDropInteractive');
+    const glare = document.getElementById('gcGlare');
+    const pedestal = document.getElementById('heroPedestal');
+
+    if (!wrapper || !card || !drop) return;
+
+    let targetRotX = 0, targetRotY = 0;
+    let targetDropX = 0, targetDropY = 0;
+    let currentRotX = 0, currentRotY = 0;
+    let currentDropX = 0, currentDropY = 0;
+    let isHovered = false;
+
+    // Myskany nirä hereket etdirseň, damja we 3D glass kartoçka şol tarapa egrelýär
+    wrapper.addEventListener('mousemove', function (e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Normalised coordinates (-1 to +1) from center
+        const normX = Math.max(-1, Math.min(1, ((x / rect.width) * 2) - 1));
+        const normY = Math.max(-1, Math.min(1, ((y / rect.height) * 2) - 1));
+
+        isHovered = true;
+        targetRotX = -normY * 18; // Max 18deg 3D tilt
+        targetRotY = normX * 18;
+        targetDropX = normX * 32; // Suw damjasy myskanyň yzyndan hereket edýär
+        targetDropY = normY * 32;
+
+        if (glare) {
+            const glareX = ((x / rect.width) * 100).toFixed(1);
+            const glareY = ((y / rect.height) * 100).toFixed(1);
+            glare.style.opacity = '1';
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.12) 35%, transparent 70%)`;
+        }
+
+        if (pedestal) {
+            pedestal.style.transform = `rotate(-14deg) skewX(${-12 + (normX * 9)}deg) scale(${1 + (normY * 0.04)})`;
+        }
+    });
+
+    wrapper.addEventListener('mouseleave', function () {
+        isHovered = false;
+        targetRotX = 0;
+        targetRotY = 0;
+        targetDropX = 0;
+        targetDropY = 0;
+        if (glare) {
+            glare.style.opacity = '0';
+        }
+        if (pedestal) {
+            pedestal.style.transform = 'rotate(-14deg) skewX(-12deg)';
+        }
+    });
+
+    // 60 FPS ýumşak LERP fiziki animasiýa
+    function renderLoop() {
+        const factor = isHovered ? 0.14 : 0.08;
+        currentRotX += (targetRotX - currentRotX) * factor;
+        currentRotY += (targetRotY - currentRotY) * factor;
+        currentDropX += (targetDropX - currentDropX) * factor;
+        currentDropY += (targetDropY - currentDropY) * factor;
+
+        card.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+        drop.style.transform = `translate3d(${currentDropX.toFixed(2)}px, ${currentDropY.toFixed(2)}px, 50px) scale(${isHovered ? 1.04 : 1})`;
+
+        requestAnimationFrame(renderLoop);
+    }
+    requestAnimationFrame(renderLoop);
+});
+</script>
+@endpush

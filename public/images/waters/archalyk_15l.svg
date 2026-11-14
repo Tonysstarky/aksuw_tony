@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bgGlow15" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#0369a1" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottleGrad15" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.9"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#7dd3fc" stop-opacity="0.6"/>
+      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="labelGrad15" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="goldCap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <filter id="shadow15" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="16" flood-color="#020830" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgGlow15)"/>
+
+  <!-- Pedestal glow reflection -->
+  <ellipse cx="200" cy="370" rx="85" ry="14" fill="#38bdf8" opacity="0.35"/>
+
+  <g filter="url(#shadow15)">
+    <!-- Blue Cap & Security Ring -->
+    <rect x="183" y="24" width="34" height="25" rx="5" fill="url(#goldCap)" stroke="#bae6fd" stroke-width="1.5"/>
+    <line x1="183" y1="31" x2="217" y2="31" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <line x1="183" y1="38" x2="217" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <rect x="180" y="49" width="40" height="7" rx="3" fill="#0284c7"/>
+
+    <!-- 1.5L Tall Sculpted Bottle Body -->
+    <path d="M185,56 L185,85 
+             Q185,110 152,140 
+             L152,345 
+             Q152,362 170,366 
+             L230,366 
+             Q248,362 248,345 
+             L248,140 
+             Q215,110 215,85 
+             L215,56 Z" 
+          fill="url(#bottleGrad15)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+
+    <!-- Ergonomic Rib Lines for 1.5L PET -->
+    <path d="M154,155 Q200,165 246,155" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+    <path d="M154,305 Q200,315 246,305" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+    <path d="M154,325 Q200,335 246,325" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+
+    <!-- Main 1.5L Blue Label -->
+    <rect x="154" y="172" width="92" height="120" rx="10" fill="url(#labelGrad15)" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Mountains on Label -->
+    <polygon points="200,188 220,212 180,212" fill="#ffffff" opacity="0.95"/>
+    <polygon points="182,198 196,212 168,212" fill="#7dd3fc" opacity="0.85"/>
+    <polygon points="218,198 232,212 204,212" fill="#7dd3fc" opacity="0.85"/>
+
+    <!-- Text -->
+    <text x="200" y="232" text-anchor="middle" font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-weight="900" font-size="15" fill="#ffffff" letter-spacing="1.2">ARÇALYK</text>
+    <text x="200" y="246" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="7.5" fill="#bae6fd" letter-spacing="1">TEBIGY AGYZ SUWY</text>
+    <text x="200" y="258" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="6.5" fill="#e0f2fe">PÖWRIZE ÇEŞMESI</text>
+
+    <!-- 1.5L Golden Badge -->
+    <rect x="180" y="268" width="40" height="15" rx="7.5" fill="#facc15" stroke="#ffffff" stroke-width="1.2"/>
+    <text x="200" y="279" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="9" fill="#0f172a">1.5 L</text>
+
+    <!-- Glass Specular Reflection Highlight -->
+    <path d="M162,110 L162,350" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <path d="M170,120 L170,290" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

@@ -14,9 +14,20 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Users - Baş Dolandyryjy: Yusup Gajaýew
+        // 1. Users - Baş Dolandyryjy: Yusup Gajaýew (Hakyky Gmail bilen)
         $yusup = User::create([
             'name' => 'Yusup Gajaýew',
+            'email' => 'atagapy@gmail.com',
+            'password' => Hash::make('password123'),
+            'role' => 'admin',
+            'phone' => '+993 65 123456',
+            'address' => 'Aşgabat ş., Bitaraplyk şaýoly 120, jaý 14',
+            'email_verified_at' => now(),
+        ]);
+
+        // Ätiýaçlyk ulanyjy (yusup@water.com)
+        User::create([
+            'name' => 'Yusup Gajaýew (Local)',
             'email' => 'yusup@water.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',
@@ -114,7 +125,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 850,
             'ph_level' => '7.4 pH',
             'mineral_content' => 'Pöwrize ýerasty süýji suw çeşmesi, Ca: 48 mg/L, Mg: 18 mg/L, TDS: 220 mg/L',
-            'image' => '/images/waters/archalyk_still.svg',
+            'image' => '/images/waters/archalyk_15l.svg',
             'description' => '„Arçalyk” kärhanasynyň Pöwrize ýerasty süýji suw ýatagyndan alynýan tebigy agyz suwy. Gündelik içmäge iň peýdaly we ýakymly suw.',
         ]);
 
@@ -126,7 +137,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 900,
             'ph_level' => '7.4 pH',
             'mineral_content' => 'Pöwrize çeşme suwy, amatly göwrüm',
-            'image' => '/images/waters/archalyk_still.svg',
+            'image' => '/images/waters/archalyk_05l.svg',
             'description' => 'Gündelik ýoluňyzda, sportda we iş ýeriňizde ýanyňyzda götermäge amatly 0.5 litrlik Arçalyk tebigy agyz suwy.',
         ]);
 
@@ -162,7 +173,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 420,
             'ph_level' => '6.4 pH',
             'mineral_content' => 'Laým, narpyz we aloe ekstraktlary',
-            'image' => '/images/waters/archi_grapefruit.svg',
+            'image' => '/images/waters/archi_mohito_aloe.svg',
             'description' => 'Ýörite tagamly Arçi Mohito & Aloe naýbaşy gazlandyrylan premium suw. Tomus günlerinde teşneligi dessine gandyryjy.',
         ]);
 
@@ -174,7 +185,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 600,
             'ph_level' => '5.8 pH',
             'mineral_content' => 'Pöwrize arassa suwy, tebigy armyt we pyrtykal şerbedi',
-            'image' => '/images/waters/archalyk_still.svg',
+            'image' => '/images/waters/archalyk_dushes_lemonade.svg',
             'description' => 'Arçalyk kärhanasynyň nusgawy Armyt (Дюшес) we Pyrtykal miweli gazlandyrylan limonady. Pöwrize arassa suwundan taýýarlanylýar.',
         ]);
 
@@ -186,7 +197,7 @@ class DatabaseSeeder extends Seeder
             'stock' => 500,
             'ph_level' => '5.9 pH',
             'mineral_content' => 'Estragon (tarhun) we zirk tagamly salkyn içgi',
-            'image' => '/images/waters/archalyk_still.svg',
+            'image' => '/images/waters/archalyk_tarhun_zirk.svg',
             'description' => 'Arçalyk fabriginiň meşhur Tarhun, Zirk, Buratino we Tokaý miweleri tagamly süýji gazlandyrylan limonadlary.',
         ]);
 
